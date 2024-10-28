@@ -1,0 +1,14 @@
+.main-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
+    height: 100vh;
+    background-image: url(../../assets/surface1.png);
+    background-position: center;
+}
+
+.main-text{
+    font-size: clamp(1rem, 3.5vw, 3rem);
+    color: #134267;
+}
