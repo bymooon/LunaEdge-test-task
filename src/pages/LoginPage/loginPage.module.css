@@ -21,6 +21,17 @@
     align-items: center;
 }
 
+.progress-controls{
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+    > button {
+        background-color: #134267;
+        padding: 6px 12px;
+        color:#93A8C1 ;
+    }
+}
+
 .onboarding-stats-container{
     margin-top: 253px;
     background-color: #134267;
