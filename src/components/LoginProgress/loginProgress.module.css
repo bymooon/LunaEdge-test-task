@@ -1,0 +1,139 @@
+.progress-container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 568px; 
+    flex-basis: 568px; 
+    flex-grow: 1; 
+    flex-shrink: 0; 
+    background: linear-gradient(to top, #0D3251, #19476C);
+    padding: 200px 102px 56px;
+}
+
+.progress-item{
+    display: flex;
+    align-items: center;
+}
+
+.progress-controls{
+    display: flex;
+    margin-top: 48px;
+    justify-content: space-between;
+    > button {
+        background-color: #134267;
+        padding: 6px 12px;
+        color:#93A8C1 ;
+        
+    }
+    > button:disabled{
+        background-color: transparent;
+        border-color: transparent;
+        cursor: default;
+        color: #5D7FA3;
+    }
+}
+
+.onboarding-stats-container{
+    margin-top: auto;
+    background-color: #134267;
+    border-radius: 8px;
+}
+
+.onboarding-stats-box{
+    display: flex;
+   border-radius: 8px;
+   padding: 16px;
+}
+
+.onboarding-stats-number{
+    font-size: 32px;
+    font-weight: 700;
+    color: #96CAF7;
+    align-self: center;
+}
+
+.onboarding-stats-paragraph{
+    margin-left: 26px;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #96CAF7
+}
+
+.circle {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  border: 2px solid #5d7fa3;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.5s, border-color 0.5s;
+  > svg{
+    width: 16px;
+    height: 16px;
+    transition: opacity 3s;
+  }
+}
+
+.active-circle {
+    background-color: #32ABF2;
+    border: none;
+    animation: fillColor 0.5s forwards;
+}
+
+.current-circle {
+    border-color: #32ABF2;
+}
+
+
+.line {
+    margin-left: 15px;
+    width: 2px;
+    height: 48px;
+    background-color: #5D7FA3;
+    transition: background-color 0.3s;
+}
+
+.active-line {
+    background-color: #32ABF2;
+    animation: lineFillColor 0.5s forwards;
+}
+
+.dots-container{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.dot{
+    width: 8px; 
+    height: 8px;
+    margin-right: 16px; 
+    border-radius: 50%; 
+    background-color: #134267;   
+}
+
+.dot:first-child{
+    background-color: #96CAF7;
+}
+
+@keyframes fillColor {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: #32ABF2;
+    }
+}
+
+@keyframes lineFillColor {
+    from {
+        background-color: #5D7FA3;
+    }
+    to {
+        background-color: #32ABF2;
+    }
+}
