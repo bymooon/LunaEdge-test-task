@@ -1,0 +1,46 @@
+.submit-success-box{
+    width: 480px;
+    height: 519px;
+    padding: 126px 66px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px 0px #6C758B33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-title{
+    color: #134267;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.success-paragraph{
+    color: #4F637D;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.continue-button{
+    width: 100%;
+    max-width: 310px;
+    background-color: #32ABF2;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.wrong-store{
+    color: #4F637D;
+    font-size: 12px;
+    > a{
+        color: #32ABF2
+    }
+}
