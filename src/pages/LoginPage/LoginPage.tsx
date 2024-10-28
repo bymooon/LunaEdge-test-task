@@ -21,35 +21,28 @@ const LoginPage: React.FC = () => {
   return (
     <div className={styles["container"]}>
       <div className={styles["progress-container"]}>
-        <div className={styles["progress-box"]}>
-          <div className={styles["progress-item"]}>
-            <div className={styles["circle"]}></div>
-            <p>Welcome</p>
-          </div>
-          <div className={styles["line"]}></div>
+        <div className={styles["progress-item"]}>
+          <div className={styles["circle"]}></div>
+          <p>Welcome</p>
         </div>
-
-        <div className={styles["progress-box"]}>
-          <div className={styles["progress-item"]}>
-            <div className={styles["circle"]}></div>
-            <p>Connect your Shopify store</p>
-          </div>
-          <div className={styles["line"]}></div>
+        <div className={styles["line"]} />
+        <div className={styles["progress-item"]}>
+          <div className={styles["circle"]}></div>
+          <p>Connect your Shopify store</p>
         </div>
-
-        <div className={styles["progress-box"]}>
-          <div className={styles["progress-item"]}>
-            <div className={styles["circle"]}></div>
-            <h2>Connect your customer support email</h2>
-          </div>
-          <div className={styles["line"]}></div>
+        <div className={styles["line"]} />
+        <div className={styles["progress-item"]}>
+          <div className={styles["circle"]}></div>
+          <h2>Connect your customer support email</h2>
         </div>
-
-        <div className={styles["progress-box"]}>
-          <div className={styles["progress-item"]}>
-            <div className={styles["circle"]}></div>
-            <p>Done</p>
-          </div>
+        <div className={styles["line"]} />
+        <div className={styles["progress-item"]}>
+          <div className={styles["circle"]}></div>
+          <p>Done</p>
+        </div>
+        <div className={styles["progress-controls"]}>
+          <button>&lt; Back</button>
+          <button>Next &gt;</button>
         </div>
         <div className={styles["onboarding-stats-container"]}>
           <div className={styles["onboarding-stats-box"]}>
