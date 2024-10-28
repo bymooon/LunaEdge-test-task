@@ -1,0 +1,81 @@
+.shopify-box{
+    width: 480px;
+    height: 617px;
+    padding: 64px 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px 0px #6C758B33;
+}
+
+.title-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.shopify-features-box{
+    margin: 32px 0;
+}
+
+.shopify-title{
+    margin-left: 2px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #20496C;
+}
+
+.shopify-welcome{
+    font-weight: 600;
+    font-size: 24px;
+    color: #134267;
+    margin-bottom: 16px;
+}
+
+.shopify-paragraph{
+    color: #4F637D;
+    line-height: 21px;
+    margin-bottom: 32px;
+}
+
+.shopify-features-item{
+    margin-bottom: 16px;
+    display: flex;
+    align-items: start;
+    > div {
+        margin-left: 8px;
+    }
+}
+
+.shopify-features-title{
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #134267;
+    font-size: 14px;
+}
+
+.shopify-features-paragraph{
+    color: #4F637D;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.submit-button{
+    width: 100%;
+    background-color: #32ABF2;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    padding:11px;
+    border-radius: 8px;
+}
+
+.cancel-submit{
+    text-align: center;
+    margin-top: 16px;
+    color: #4F637D;
+    font-size: 12px;
+    > a {
+        color:  #4F637D;
+
+    }
+}
