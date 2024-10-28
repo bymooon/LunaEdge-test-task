@@ -79,3 +79,9 @@
 
     }
 }
+
+.submit-success-box{
+    display: flex;
+    justify-content: center;
+    padding: 126px 66px;
+}

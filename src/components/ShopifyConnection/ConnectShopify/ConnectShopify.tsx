@@ -1,10 +1,17 @@
-import React from "react";
-import chadLogo from "../../assets/chadLogo.png";
-import iconCheck from "../../assets/iconCheck.svg";
+import React, { useState } from "react";
+import chadLogo from "../../../assets/chadLogo.png";
+import iconCheck from "../../../assets/iconCheck.svg";
 import styles from "./connectShopify.module.css";
+import ConnectShopifySuccess from "../ConnectShopifySuccess/ConnectShopifySuccess";
+import ConnectShopifyDecline from "../ConnectShopifyDecline/ConnectShopifyDecline";
 
-const ConnectShopify: React.FC = () => {
-  return (
+const ConnectShopify: React.FC<{ handleNext: () => void }> = ({
+  handleNext,
+}) => {
+  const [submitConnect, setSubmitConnect] = useState(false);
+  const [isAlternativeConnect, setIsAlternativeConnect] = useState(false);
+
+  return !submitConnect ? (
     <div className={styles["shopify-box"]}>
       <div className={styles["title-box"]}>
         <img src={chadLogo} alt="Logo" />
@@ -15,8 +22,8 @@ const ConnectShopify: React.FC = () => {
         Installs the Chad widget in your Shopify store and sets it up to display
         your customers’ order information and self-serve options.
       </p>
-      <div className={styles["shopify-features-box"]}>
-        <div className={styles["shopify-features-item"]}>
+      <ul className={styles["shopify-features-box"]}>
+        <li className={styles["shopify-features-item"]}>
           <img src={iconCheck} alt="check" />
           <div>
             <h3 className={styles["shopify-features-title"]}>
@@ -26,9 +33,8 @@ const ConnectShopify: React.FC = () => {
               Global coverage with 600+ couriers supported
             </p>
           </div>
-        </div>
-
-        <div className={styles["shopify-features-item"]}>
+        </li>
+        <li className={styles["shopify-features-item"]}>
           <img src={iconCheck} alt="check" />
           <div>
             <h3 className={styles["shopify-features-title"]}>Manage orders</h3>
@@ -37,9 +43,8 @@ const ConnectShopify: React.FC = () => {
               with their orders
             </p>
           </div>
-        </div>
-
-        <div className={styles["shopify-features-item"]}>
+        </li>
+        <li className={styles["shopify-features-item"]}>
           <img src={iconCheck} alt="check" />
           <div>
             <h3 className={styles["shopify-features-title"]}>
@@ -50,18 +55,34 @@ const ConnectShopify: React.FC = () => {
               before resolving or escalating each request
             </p>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
 
-      <button type="submit" className={styles["submit-button"]}>
+      <button
+        type="submit"
+        className={styles["submit-button"]}
+        onClick={() => setSubmitConnect(true)}
+      >
         Connect store
       </button>
       <div className={styles["cancel-submit"]}>
-        <a href="#" className={styles["login-question"]}>
+        <a
+          href="#"
+          className={styles["login-question"]}
+          onClick={(e) => {
+            e.preventDefault();
+            setIsAlternativeConnect(true);
+            setSubmitConnect(true);
+          }}
+        >
           I don`t use Shopify
         </a>
       </div>
     </div>
+  ) : isAlternativeConnect ? (
+    <ConnectShopifyDecline handleNext={handleNext} />
+  ) : (
+    <ConnectShopifySuccess handleNext={handleNext} />
   );
 };
 
