@@ -1,0 +1,100 @@
+.gmail-box{
+    width: 480px;
+    height: 617px;
+    padding: 64px 40px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px 0px #6C758B33;
+}
+
+.title-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.gmail-features-box{
+    margin: 32px 0;
+}
+
+.gmail-title{
+    margin-left: 2px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #20496C;
+}
+
+.gmail-welcome{
+    font-weight: 600;
+    font-size: 24px;
+    color: #134267;
+    margin-bottom: 16px;
+}
+
+.gmail-paragraph{
+    color: #4F637D;
+    line-height: 21px;
+    margin-bottom: 32px;
+}
+
+.gmail-features-item{
+    margin-bottom: 16px;
+    display: flex;
+    align-items: start;
+    > div {
+        margin-left: 8px;
+    }
+}
+
+.gmail-features-title{
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #134267;
+    font-size: 14px;
+}
+
+.gmail-features-paragraph{
+    color: #4F637D;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.submit-button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #5383EC;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 2px;
+}
+
+.submit-box{
+    display: flex;
+}
+.google-icon{
+    background-color: #fff;
+    padding: 14px;
+}
+
+.gmail-submit-text{
+    font-weight: 500;
+    margin-left: 96px;
+}
+
+.cancel-submit{
+    text-align: center;
+    margin-top: 16px;
+    color: #4F637D;
+    font-size: 12px;
+    > a {
+        color:  #4F637D;
+    }
+}
+
+.submit-success-box{
+    display: flex;
+    justify-content: center;
+    padding: 126px 66px;
+}
