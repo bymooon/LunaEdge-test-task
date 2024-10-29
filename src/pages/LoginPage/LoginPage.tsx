@@ -35,7 +35,7 @@ const LoginPage: React.FC = () => {
       <div className={styles["login-container"]}>
         {currentStep === 1 && <LoginForm handleNext={handleNext} />}
         {currentStep === 2 && <ConnectShopify handleNext={handleNext} />}
-        {currentStep === 3 && <ConnectGmail handleNext={handleNext} />}
+        {currentStep === 3 && <ConnectGmail />}
       </div>
     </div>
   );
