@@ -3,9 +3,7 @@
     flex-direction: column;
     overflow: hidden;
     max-width: 568px; 
-    flex-basis: 568px; 
-    flex-grow: 1; 
-    flex-shrink: 0; 
+    width: 100%;
     background: linear-gradient(to top, #0D3251, #19476C);
     padding: 200px 102px 56px;
 }

@@ -12,5 +12,18 @@
     overflow: hidden;
     flex-grow: 1; 
     background-image: url(../../assets/surface1.png);
+    
+}
+
+.mobile-login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-grow: 1; 
+    background-color: #fff;
+    > div{
+        box-shadow: none;
+    }
 }
 

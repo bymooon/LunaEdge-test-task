@@ -1,6 +1,6 @@
 .shopify-box{
-    width: 480px;
-    height: 617px;
+    max-width: 480px;
+    width: 100%;
     padding: 64px 40px;
     background-color: #FFFFFF;
     border-radius: 8px;

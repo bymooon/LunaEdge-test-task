@@ -1,6 +1,6 @@
 .submit-success-box{
-    width: 480px;
-    height: 519px;
+    max-width: 480px;
+    width: 100%;
     padding: 126px 66px;
     background-color: #FFFFFF;
     border-radius: 8px;

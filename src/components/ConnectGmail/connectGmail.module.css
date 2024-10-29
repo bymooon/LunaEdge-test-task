@@ -1,6 +1,6 @@
 .gmail-box{
-    width: 480px;
-    height: 617px;
+    max-width: 480px;
+    width: 100%;    
     padding: 64px 40px;
     background-color: #FFFFFF;
     border-radius: 8px;
@@ -80,7 +80,7 @@
 
 .gmail-submit-text{
     font-weight: 500;
-    margin-left: 96px;
+    margin: auto;
 }
 
 .cancel-submit{
