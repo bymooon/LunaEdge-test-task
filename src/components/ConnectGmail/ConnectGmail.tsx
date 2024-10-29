@@ -4,13 +4,15 @@ import iconCheck from "../../assets/iconCheck.svg";
 import styles from "./connectGmail.module.css";
 import googleIcon from "../../assets/googleIcon.svg";
 import { useNavigate } from "react-router-dom";
+import PlatformSelector from "../PlatformSelector/PlatformSelector";
+import ConnectEnd from "../ConnectEnd/ConnectEnd";
 
-const ConnectGmail: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
-  const [submitConnect, setSubmitConnect] = useState(false);
+const ConnectGmail: React.FC = () => {
+  const [submitGmail, setSubmitGmail] = useState(false);
   const [isAlternativeConnect, setIsAlternativeConnect] = useState(false);
   const navigate = useNavigate();
 
-  return (
+  return !submitGmail ? (
     <div className={styles["gmail-box"]}>
       <div className={styles["title-box"]}>
         <img src={chadLogo} alt="Logo" />
@@ -81,15 +83,32 @@ const ConnectGmail: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
           className={styles["login-question"]}
           onClick={(e) => {
             e.preventDefault();
-
-            // setIsAlternativeConnect(true);
-            // setSubmitConnect(true);
+            setIsAlternativeConnect(true);
+            setSubmitGmail(true);
           }}
         >
           I don’t use Gmail
         </a>
       </div>
     </div>
+  ) : isAlternativeConnect ? (
+    <PlatformSelector
+      handleDecline={() => setIsAlternativeConnect(false)}
+      welcome="Don’t use Gmail?"
+      paragraph="Chad Beta is currently only integrated with Gmail. We’ll send you an email when Chad becomes compatible with your support ticket platform."
+      options={[
+        { label: "Select platform", value: "platform" },
+        { label: "Meta", value: "meta" },
+        { label: "Yahoo", value: "yahoo" },
+      ]}
+      buttonText="Submit"
+      question="Actually use Gmail?"
+    />
+  ) : (
+    <ConnectEnd
+      endTitle="Response received"
+      endParagraph="Thank you for your interest in Chad! We’ll be hard at work building integrations to support your email client."
+    />
   );
 };
 
