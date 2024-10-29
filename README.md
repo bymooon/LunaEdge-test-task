@@ -37,16 +37,16 @@ This project is a multiple steps login application created for a test task from 
 
 2. Install packages
 
-```
+   ```
    npm install
    or
    yarn install
-```
+   ```
 
 3. Start project
 
-```
+   ```
    npm run dev
    or
    yarn dev
-```
+   ```
