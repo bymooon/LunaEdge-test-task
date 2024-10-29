@@ -4,7 +4,7 @@ import iconCheck from "../../../assets/iconCheck.svg";
 import styles from "./connectShopify.module.css";
 import ConnectShopifySuccess from "../ConnectShopifySuccess/ConnectShopifySuccess";
 import ConnectShopifyDecline from "../ConnectShopifyDecline/ConnectShopifyDecline";
-import ConnectShopifyEnd from "../ConnectShopifyEnd/ConnectShopifyEnd";
+import ConnectEnd from "../../ConnectEnd/ConnectEnd";
 
 const ConnectShopify: React.FC<{
   handleNext: () => void;
@@ -18,7 +18,11 @@ const ConnectShopify: React.FC<{
   };
 
   return handleEnd ? (
-    <ConnectShopifyEnd />
+    <ConnectEnd
+      endTitle="Response received"
+      endParagraph="Thank you for your interest in Chad! We’ll be hard at work building
+        integrations to support your platform."
+    />
   ) : !submitConnect ? (
     <div className={styles["shopify-box"]}>
       <div className={styles["title-box"]}>
