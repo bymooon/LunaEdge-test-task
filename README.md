@@ -1,5 +1,9 @@
 # Luna Edge Test-task
 
+# Deploy
+
+[Luna Edge test-task](https://luna-edge-test-task-wine.vercel.app/)
+
 ## Overview
 
 This project is a multiple steps login application created for a test task from Luna Edge. It is built using React with TypeScript, Vite, and CSS Modules.
