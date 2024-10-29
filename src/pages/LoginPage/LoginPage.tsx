@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./LoginPage.module.css";
+import styles from "./loginPage.module.css";
 import ConnectShopify from "../../components/ShopifyConnection/ConnectShopify/ConnectShopify";
 import ConnectGmail from "../../components/ConnectGmail/ConnectGmail";
 import LoginProgress from "../../components/LoginProgress/LoginProgress";
