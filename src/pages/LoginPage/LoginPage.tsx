@@ -4,10 +4,14 @@ import ConnectShopify from "../../components/ShopifyConnection/ConnectShopify/Co
 import ConnectGmail from "../../components/ConnectGmail/ConnectGmail";
 import LoginProgress from "../../components/LoginProgress/LoginProgress";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const LoginPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState([false, false, false]);
+  // const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 1194px)");
+  // const isTablet = useMediaQuery("(min-width: 769px) and (max-width: 1194px)");
 
   const handleNext = () => {
     if (currentStep < 4) {
@@ -26,12 +30,15 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className={styles["container"]}>
-      <LoginProgress
-        currentStep={currentStep}
-        handleNext={handleNext}
-        handleBack={handleBack}
-        completedSteps={completedSteps}
-      />
+      {!isMobile && (
+        <LoginProgress
+          currentStep={currentStep}
+          handleNext={handleNext}
+          handleBack={handleBack}
+          completedSteps={completedSteps}
+        />
+      )}
+
       <div className={styles["login-container"]}>
         {currentStep === 1 && <LoginForm handleNext={handleNext} />}
         {currentStep === 2 && <ConnectShopify handleNext={handleNext} />}
