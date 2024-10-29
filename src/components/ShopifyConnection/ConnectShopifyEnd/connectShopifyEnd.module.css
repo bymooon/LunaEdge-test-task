@@ -1,0 +1,31 @@
+.end-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    padding: 91px 66px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 5px 20px 0px #6C758B33;
+}
+
+.title-box{
+    display: flex;
+    align-items: center;
+}
+
+.end-title{
+    font-weight: 600;
+    font-size: 20px;
+    color: #134267;
+}
+
+.end-paragraph{
+    text-align: center;
+    color: #4F637D;
+    line-height: 21px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    font-size: 14px;
+}
