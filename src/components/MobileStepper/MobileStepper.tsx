@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MobileStepper.module.css";
+import styles from "./mobileStepper.module.css";
 
 interface MobileStepperProps {
   currentStep: number;
