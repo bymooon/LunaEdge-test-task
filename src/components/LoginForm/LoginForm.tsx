@@ -4,8 +4,13 @@ import chadLogo from "../../assets/chadLogo.png";
 import iconEye from "../../assets/iconEye.svg";
 import iconEyeOff from "../../assets/iconEyeOff.svg";
 import { useAuth } from "../../context/AuthContext";
+import MobileStepper from "../MobileStepper/MobileStepper";
 
-const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
+const LoginForm: React.FC<{
+  handleNext: () => void;
+  currentStep: number;
+  isDeskopLoginProgressHidden: boolean;
+}> = ({ handleNext, currentStep, isDeskopLoginProgressHidden }) => {
   const { email, setEmail, name, setName, password, setPassword } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,6 +29,9 @@ const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
         <img src={chadLogo} alt="Logo" />
         <h2 className={styles["login-title"]}>Chad</h2>
       </div>
+      {isDeskopLoginProgressHidden && (
+        <MobileStepper currentStep={currentStep} />
+      )}
       <p className={styles["login-welcome"]}>Welcome to Chad</p>
       <p className={styles["login-paragraph"]}>
         Go live in 10 minutes! Our self-service widget empowers your customers

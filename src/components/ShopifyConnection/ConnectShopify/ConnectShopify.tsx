@@ -5,10 +5,13 @@ import styles from "./connectShopify.module.css";
 import ConnectShopifySuccess from "../ConnectShopifySuccess/ConnectShopifySuccess";
 import ConnectShopifyDecline from "../ConnectShopifyDecline/ConnectShopifyDecline";
 import ConnectEnd from "../../ConnectEnd/ConnectEnd";
+import MobileStepper from "../../MobileStepper/MobileStepper";
 
 const ConnectShopify: React.FC<{
   handleNext: () => void;
-}> = ({ handleNext }) => {
+  currentStep: number;
+  isDeskopLoginProgressHidden: boolean;
+}> = ({ handleNext, currentStep, isDeskopLoginProgressHidden }) => {
   const [submitConnect, setSubmitConnect] = useState(false);
   const [isAlternativeConnect, setIsAlternativeConnect] = useState(false);
   const [handleEnd, setHandleEnd] = useState(false);
@@ -29,6 +32,9 @@ const ConnectShopify: React.FC<{
         <img src={chadLogo} alt="Logo" />
         <h2 className={styles["shopify-title"]}>Chad</h2>
       </div>
+      {isDeskopLoginProgressHidden && (
+        <MobileStepper currentStep={currentStep} />
+      )}
       <p className={styles["shopify-welcome"]}>Connect your Shopify store</p>
       <p className={styles["shopify-paragraph"]}>
         Installs the Chad widget in your Shopify store and sets it up to display

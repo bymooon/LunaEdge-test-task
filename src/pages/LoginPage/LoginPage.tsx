@@ -46,9 +46,26 @@ const LoginPage: React.FC = () => {
             : styles["login-container"]
         }
       >
-        {currentStep === 1 && <LoginForm handleNext={handleNext} />}
-        {currentStep === 2 && <ConnectShopify handleNext={handleNext} />}
-        {currentStep === 3 && <ConnectGmail />}
+        {currentStep === 1 && (
+          <LoginForm
+            handleNext={handleNext}
+            currentStep={currentStep}
+            isDeskopLoginProgressHidden={isDeskopLoginProgressHidden}
+          />
+        )}
+        {currentStep === 2 && (
+          <ConnectShopify
+            handleNext={handleNext}
+            currentStep={currentStep}
+            isDeskopLoginProgressHidden={isDeskopLoginProgressHidden}
+          />
+        )}
+        {currentStep === 3 && (
+          <ConnectGmail
+            currentStep={currentStep}
+            isDeskopLoginProgressHidden={isDeskopLoginProgressHidden}
+          />
+        )}
       </div>
     </div>
   );

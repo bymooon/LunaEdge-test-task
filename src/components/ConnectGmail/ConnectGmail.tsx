@@ -6,8 +6,12 @@ import googleIcon from "../../assets/googleIcon.svg";
 import { useNavigate } from "react-router-dom";
 import PlatformSelector from "../PlatformSelector/PlatformSelector";
 import ConnectEnd from "../ConnectEnd/ConnectEnd";
+import MobileStepper from "../MobileStepper/MobileStepper";
 
-const ConnectGmail: React.FC = () => {
+const ConnectGmail: React.FC<{
+  currentStep: number;
+  isDeskopLoginProgressHidden: boolean;
+}> = ({ currentStep, isDeskopLoginProgressHidden }) => {
   const [submitGmail, setSubmitGmail] = useState(false);
   const [isAlternativeConnect, setIsAlternativeConnect] = useState(false);
   const navigate = useNavigate();
@@ -18,6 +22,9 @@ const ConnectGmail: React.FC = () => {
         <img src={chadLogo} alt="Logo" />
         <h2 className={styles["gmail-title"]}>Chad</h2>
       </div>
+      {isDeskopLoginProgressHidden && (
+        <MobileStepper currentStep={currentStep} />
+      )}
       <p className={styles["gmail-welcome"]}>
         Connect your customer support email
       </p>
