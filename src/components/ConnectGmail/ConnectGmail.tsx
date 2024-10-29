@@ -74,7 +74,7 @@ const ConnectGmail: React.FC<{
         <button
           type="submit"
           className={styles["submit-button"]}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/main")}
         >
           <div className={styles["google-icon"]}>
             <img src={googleIcon} alt="google" />
