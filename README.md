@@ -33,14 +33,20 @@ This project is a multiple steps login application created for a test task from 
    ```bash
    git clone https://github.com/bymooon/LunaEdge-test-task.git
    cd LunaEdge-test-task
-   npm install
    ```
 
-# or
+2. Install packages
 
-yarn install
-npm run dev
+```
+   npm install
+   or
+   yarn install
+```
 
-# or
+3. Start project
 
-yarn dev
+```
+   npm run dev
+   or
+   yarn dev
+```
