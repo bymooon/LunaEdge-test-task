@@ -1,11 +1,12 @@
+import React from "react";
 import styles from "./loginProgress.module.css";
+
 const LoginProgress: React.FC<{
   currentStep: number;
   completedSteps: boolean[];
   handleNext: () => void;
   handleBack: () => void;
 }> = ({ currentStep, completedSteps, handleNext, handleBack }) => {
-  const dots = Array(5).fill(0);
   const CheckIcon = () => (
     <svg
       width="16"
@@ -21,75 +22,42 @@ const LoginProgress: React.FC<{
     </svg>
   );
 
+  const dots = Array(5).fill(0);
+
+  const steps = [
+    "Welcome",
+    "Connect your Shopify store",
+    "Connect your customer support email",
+    "Done",
+  ];
+
   return (
     <div className={styles["progress-container"]}>
-      <div>
-        <div className={styles["progress-item"]}>
+      {steps.map((step, index) => (
+        <React.Fragment key={index}>
           <div
-            className={`${styles["circle"]} 
-            ${currentStep === 1 ? styles["current-circle"] : ""}
-            ${currentStep > 1 ? styles["active-circle"] : ""}`}
+            className={styles["progress-item"]}
+            data-active={currentStep === index + 1}
+            data-completed={completedSteps[index]}
           >
-            {currentStep > 1 && <CheckIcon />}
+            <div className={`${styles["circle"]} `}>
+              {completedSteps[index] && <CheckIcon />}
+            </div>
+            <p>{step}</p>
           </div>
-          <p>Welcome</p>
-        </div>
-        <div
-          className={`${styles["line"]} ${
-            currentStep >= 2 ? styles["active-line"] : ""
-          }`}
-        />
-        <div className={styles["progress-item"]}>
-          <div
-            className={`${styles["circle"]} 
-            ${currentStep === 2 ? styles["current-circle"] : ""}
-            ${currentStep > 2 ? styles["active-circle"] : ""}`}
-          >
-            {currentStep > 2 && <CheckIcon />}
-          </div>
-          <p>Connect your Shopify store</p>
-        </div>
-        <div
-          className={`${styles["line"]} ${
-            currentStep >= 3 ? styles["active-line"] : ""
-          }`}
-        />
-        <div className={styles["progress-item"]}>
-          <div
-            className={`${styles["circle"]} 
-            ${currentStep === 3 ? styles["current-circle"] : ""}
-            ${currentStep > 3 ? styles["active-circle"] : ""}`}
-          >
-            {currentStep > 3 && <CheckIcon />}
-          </div>
-          <p>Connect your customer support email</p>
-        </div>
-        <div
-          className={`${styles["line"]} ${
-            currentStep >= 4 ? styles["active-line"] : ""
-          }`}
-        />
-        <div className={styles["progress-item"]}>
-          <div
-            className={`${styles["circle"]} 
-            ${currentStep === 4 ? styles["current-circle"] : ""}
-            ${currentStep > 4 ? styles["active-circle"] : ""}`}
-          >
-            {currentStep > 4 && <CheckIcon />}
-          </div>
-          <p>Done</p>
-        </div>
-        <div className={styles["progress-controls"]}>
-          <button disabled={currentStep === 1} onClick={handleBack}>
-            &lt; Back
-          </button>
-          <button
-            disabled={!completedSteps[currentStep - 1]}
-            onClick={handleNext}
-          >
-            Next &gt;
-          </button>
-        </div>
+          {index < steps.length - 1 && <div className={`${styles["line"]}`} />}
+        </React.Fragment>
+      ))}
+      <div className={styles["progress-controls"]}>
+        <button disabled={currentStep === 1} onClick={handleBack}>
+          &lt; Back
+        </button>
+        <button
+          disabled={!completedSteps[currentStep - 1]}
+          onClick={handleNext}
+        >
+          Next &gt;
+        </button>
       </div>
       <div className={styles["onboarding-stats-container"]}>
         <div className={styles["onboarding-stats-box"]}>

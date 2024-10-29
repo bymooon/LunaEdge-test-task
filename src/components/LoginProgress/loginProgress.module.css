@@ -78,13 +78,20 @@
   }
 }
 
-.active-circle {
+.progress-item[data-active=true][data-completed=true] .circle {
     background-color: #32ABF2;
     border: none;
     animation: fillColor 0.5s forwards;
+    outline: 1px solid #32ABF2;
+    outline-offset: 2px;
 }
 
-.current-circle {
+.progress-item[data-completed=true] .circle {
+    background-color: #5D7FA3; 
+    border: none;
+}
+
+.progress-item[data-active=true] .circle {
     border-color: #32ABF2;
 }
 
@@ -95,6 +102,14 @@
     height: 48px;
     background-color: #5D7FA3;
     transition: background-color 0.3s;
+}
+
+/* .progress-item[data-completed=true] + .line {
+    background-color: #32ABF2;
+} */
+
+.line:has(+.progress-item[data-active=true]) {
+    background-color: #32ABF2;
 }
 
 .active-line {
