@@ -4,14 +4,22 @@ import iconCheck from "../../../assets/iconCheck.svg";
 import styles from "./connectShopify.module.css";
 import ConnectShopifySuccess from "../ConnectShopifySuccess/ConnectShopifySuccess";
 import ConnectShopifyDecline from "../ConnectShopifyDecline/ConnectShopifyDecline";
+import ConnectShopifyEnd from "../ConnectShopifyEnd/ConnectShopifyEnd";
 
-const ConnectShopify: React.FC<{ handleNext: () => void }> = ({
-  handleNext,
-}) => {
+const ConnectShopify: React.FC<{
+  handleNext: () => void;
+}> = ({ handleNext }) => {
   const [submitConnect, setSubmitConnect] = useState(false);
   const [isAlternativeConnect, setIsAlternativeConnect] = useState(false);
+  const [handleEnd, setHandleEnd] = useState(false);
 
-  return !submitConnect ? (
+  const handleDecline = () => {
+    setHandleEnd(true);
+  };
+
+  return handleEnd ? (
+    <ConnectShopifyEnd />
+  ) : !submitConnect ? (
     <div className={styles["shopify-box"]}>
       <div className={styles["title-box"]}>
         <img src={chadLogo} alt="Logo" />
@@ -80,7 +88,7 @@ const ConnectShopify: React.FC<{ handleNext: () => void }> = ({
       </div>
     </div>
   ) : isAlternativeConnect ? (
-    <ConnectShopifyDecline handleNext={handleNext} />
+    <ConnectShopifyDecline handleDecline={handleDecline} />
   ) : (
     <ConnectShopifySuccess handleNext={handleNext} />
   );

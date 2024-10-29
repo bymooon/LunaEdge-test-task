@@ -7,13 +7,13 @@ type OptionType = {
 };
 
 const PlatformSelector: React.FC<{
-  handleNext: () => void;
+  handleDecline: () => void;
   welcome: string;
   paragraph: string;
   options: OptionType[];
   buttonText: string;
   question: string;
-}> = ({ handleNext, welcome, paragraph, options, buttonText, question }) => {
+}> = ({ handleDecline, welcome, paragraph, options, buttonText, question }) => {
   return (
     <div className={styles["platform-box"]}>
       <div className={styles["title-box"]}>
@@ -39,12 +39,13 @@ const PlatformSelector: React.FC<{
       <button
         type="submit"
         className={styles["submit-button"]}
-        onClick={handleNext}
+        onClick={handleDecline}
       >
         {buttonText}
       </button>
       <h3 className={styles["platform-question"]}>
-        {question} <a href="#">Connect</a>
+        {question}
+        <a href="#"> Connect</a>
       </h3>
     </div>
   );
