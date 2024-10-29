@@ -1,9 +1,12 @@
+import React, { useState } from "react";
 import styles from "./loginForm.module.css";
 import chadLogo from "../../assets/chadLogo.png";
-import { useState } from "react";
 import iconEye from "../../assets/iconEye.svg";
 import iconEyeOff from "../../assets/iconEyeOff.svg";
+import { useAuth } from "../../context/AuthContext";
+
 const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
+  const { email, setEmail, name, setName, password, setPassword } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -36,6 +39,8 @@ const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
               name="email"
               required
               placeholder="megachad@trychad.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -47,6 +52,8 @@ const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
               name="name"
               required
               placeholder="Mega Chad"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -59,6 +66,8 @@ const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
                 name="password"
                 required
                 placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <span
                 className={styles["show-password"]}
@@ -83,4 +92,5 @@ const LoginForm: React.FC<{ handleNext: () => void }> = ({ handleNext }) => {
     </div>
   );
 };
+
 export default LoginForm;
